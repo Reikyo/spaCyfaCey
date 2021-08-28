@@ -1,0 +1,117 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis.css" type="text/css" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/vis/4.16.1/vis-network.min.js"> </script>
+<center>
+<h1></h1>
+</center>
+
+<!-- <link rel="stylesheet" href="../node_modules/vis/dist/vis.min.css" type="text/css" />
+<script type="text/javascript" src="../node_modules/vis/dist/vis.js"> </script>-->
+
+<style type="text/css">
+
+        #mynetwork {
+            width: 100%;
+            height: 100%;
+            background-color: #ffffff;
+            border: 1px solid lightgray;
+            position: relative;
+            float: left;
+        }
+
+        
+
+        
+
+        
+</style>
+
+</head>
+
+<body>
+<div id = "mynetwork"></div>
+
+
+<script type="text/javascript">
+
+    // initialize global variables.
+    var edges;
+    var nodes;
+    var network; 
+    var container;
+    var options, data;
+
+    
+    // This method is responsible for drawing the graph, returns the drawn network
+    function drawGraph() {
+        var container = document.getElementById('mynetwork');
+        
+        
+
+        // parsing and collecting nodes and edges from the python
+        nodes = new vis.DataSet([{"color": "#49BAF2", "font": "14px gillsans #424242", "id": 0, "label": "0: 0: PROPN: PERSON: Bruce", "shape": "dot", "title": "0: 0: PROPN: PERSON: Bruce"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 1, "label": "1: 6: VERB: works", "shape": "dot", "title": "1: 6: VERB: works"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 2, "label": "2: 12: ADP: for", "shape": "dot", "title": "2: 12: ADP: for"}, {"color": "#49BAF2", "font": "14px gillsans #424242", "id": 3, "label": "3: 16: PROPN: PERSON: Iron", "shape": "dot", "title": "3: 16: PROPN: PERSON: Iron"}, {"color": "#49BAF2", "font": "14px gillsans #424242", "id": 4, "label": "4: 21: PROPN: PERSON: Maiden", "shape": "dot", "title": "4: 21: PROPN: PERSON: Maiden"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 5, "label": "5: 28: ADP: as", "shape": "dot", "title": "5: 28: ADP: as"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 6, "label": "6: 31: DET: a", "shape": "dot", "title": "6: 31: DET: a"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 7, "label": "7: 33: NOUN: pilot", "shape": "dot", "title": "7: 33: NOUN: pilot"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 8, "label": "8: 39: CCONJ: and", "shape": "dot", "title": "8: 39: CCONJ: and"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 9, "label": "9: 43: ADV: sometimes", "shape": "dot", "title": "9: 43: ADV: sometimes"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 10, "label": "10: 53: ADP: as", "shape": "dot", "title": "10: 53: ADP: as"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 11, "label": "11: 56: DET: a", "shape": "dot", "title": "11: 56: DET: a"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 12, "label": "12: 58: NOUN: singer", "shape": "dot", "title": "12: 58: NOUN: singer"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 13, "label": "13: 64: PUNCT: .", "shape": "dot", "title": "13: 64: PUNCT: ."}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 14, "label": "14: 66: PRON: He", "shape": "dot", "title": "14: 66: PRON: He"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 15, "label": "15: 69: VERB: lives", "shape": "dot", "title": "15: 69: VERB: lives"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 16, "label": "16: 75: ADP: in", "shape": "dot", "title": "16: 75: ADP: in"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 17, "label": "17: 78: DET: a", "shape": "dot", "title": "17: 78: DET: a"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 18, "label": "18: 80: NOUN: castle", "shape": "dot", "title": "18: 80: NOUN: castle"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 19, "label": "19: 87: ADP: in", "shape": "dot", "title": "19: 87: ADP: in"}, {"color": "#A7CC7B", "font": "14px gillsans #424242", "id": 20, "label": "20: 90: PROPN: GPE: Coventry", "shape": "dot", "title": "20: 90: PROPN: GPE: Coventry"}, {"color": "#EBEBEB", "font": "14px gillsans #424242", "id": 21, "label": "21: 98: PUNCT: .", "shape": "dot", "title": "21: 98: PUNCT: ."}]);
+        edges = new vis.DataSet([{"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 1, "label": "nsubj", "title": "nsubj", "to": 0}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 1, "label": "prep", "title": "prep", "to": 2}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 1, "label": "prep", "title": "prep", "to": 5}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 1, "label": "cc", "title": "cc", "to": 8}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 1, "label": "conj", "title": "conj", "to": 10}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 1, "label": "punct", "title": "punct", "to": 13}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 2, "label": "pobj", "title": "pobj", "to": 4}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 4, "label": "compound", "title": "compound", "to": 3}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 5, "label": "pobj", "title": "pobj", "to": 7}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 7, "label": "det", "title": "det", "to": 6}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 10, "label": "advmod", "title": "advmod", "to": 9}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 10, "label": "pobj", "title": "pobj", "to": 12}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 12, "label": "det", "title": "det", "to": 11}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 15, "label": "nsubj", "title": "nsubj", "to": 14}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 15, "label": "prep", "title": "prep", "to": 16}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 15, "label": "punct", "title": "punct", "to": 21}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 16, "label": "pobj", "title": "pobj", "to": 18}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 18, "label": "det", "title": "det", "to": 17}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 18, "label": "prep", "title": "prep", "to": 19}, {"arrows": "to", "font": "12px gillsans-italic #A9A9A9", "from": 19, "label": "pobj", "title": "pobj", "to": 20}]);
+
+        // adding nodes and edges to the graph
+        data = {nodes: nodes, edges: edges};
+
+        var options = {
+    "configure": {
+        "enabled": false
+    },
+    "edges": {
+        "color": {
+            "inherit": true
+        },
+        "smooth": {
+            "enabled": false,
+            "type": "continuous"
+        }
+    },
+    "interaction": {
+        "dragNodes": true,
+        "hideEdgesOnDrag": false,
+        "hideNodesOnDrag": false
+    },
+    "physics": {
+        "enabled": true,
+        "forceAtlas2Based": {
+            "avoidOverlap": 0.5,
+            "centralGravity": 0.005,
+            "damping": 2.0,
+            "gravitationalConstant": -100,
+            "springConstant": 0.1,
+            "springLength": 50
+        },
+        "solver": "forceAtlas2Based",
+        "stabilization": {
+            "enabled": true,
+            "fit": true,
+            "iterations": 1000,
+            "onlyDynamicEdges": false,
+            "updateInterval": 50
+        }
+    }
+};
+        
+        
+
+        
+
+        network = new vis.Network(container, data, options);
+	 
+        
+
+
+        
+
+        return network;
+
+    }
+
+    drawGraph();
+
+</script>
+</body>
+</html>
