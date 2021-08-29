@@ -4,8 +4,9 @@ dependencies:
   - appmode
   - pip
   - pip:
-    - pandas==1.0.5
+    - neuralcoref==4.0
+    - pandas==1.3.2
     - pyvis==0.1.9
     - qgrid==1.3.1
-    - spacy==3.1.2
-    - https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-3.1.0/en_core_web_lg-3.1.0.tar.gz
+    - spacy==2.3.7
+    - https://github.com/explosion/spacy-models/releases/download/en_core_web_lg-2.3.1/en_core_web_lg-2.3.1.tar.gz
