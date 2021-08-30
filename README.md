@@ -15,7 +15,6 @@ If you dig into the files here, you will see some disabled code related to [neur
 
 ## Outputs
 
-<br/><br/>
 <img src="images/spaCyfaCey_Demo_1.png" alt="Level 1" width="250"/>
 <img src="images/spaCyfaCey_Demo_2.png" alt="Level 2" width="250"/>
 <img src="images/spaCyfaCey_Demo_3.png" alt="Level 3" width="250"/><br/>
