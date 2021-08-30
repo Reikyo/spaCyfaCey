@@ -41,8 +41,8 @@ A "token" is something that spaCy regards as a single linguistic unit, typically
 - `Text` - Form of the token as seen in the given text
 - `Lemma` - Lemmatised form of the token e.g. "worked" has lemma "work", "loves" has lemma "love"
 - `Shape` - Approximate shape of the token e.g. "Xxxx" for a capitalised medium length word, "xx" for a lowercase short word, and so on. Note that the number of "x" doesn't necessarily match the number of characters in the token.
-- `POS coarse` - Part Of Speech in its coarsest description e.g. "NOUN", "VERB" etc.
-- `POS fine` - Part Of Speech in its finest description e.g. "NN" (singular or mass noun), "VB" (base form verb) etc.
+- `POS coarse` - Part of speech in its coarsest description e.g. "NOUN", "VERB" etc.
+- `POS fine` - Part of speech in its finest description e.g. "NN" (singular or mass noun), "VB" (base form verb) etc.
 - `Dependency` - Dependency (i.e. relationship) of the token with respect to its "head"/"parent" token e.g. "nsubj" (nominal subject), "pobj" (preposition object)
 - `Ent IOB` - Position of the token in a named entity. "B" means the beginning or sole token, "I" means an inside token (which includes the final token of the entity), and "O" means an outside token (which means not in a named entity at all).
 - `Ent type` - Type of the named entity that the token is a part of, if it is part of one at all
