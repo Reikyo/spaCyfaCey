@@ -22,7 +22,6 @@ If you dig into the files here, you will see some disabled code related to [neur
 <img src="images/spaCyfaCey_Demo_4.png" alt="Level 4" width="250"/>
 <img src="images/spaCyfaCey_Demo_5.png" alt="Level 5" width="250"/>
 <img src="images/spaCyfaCey_Demo_6.png" alt="Level 6" width="250"/>
-<br/>
 
 The above images show the running application, including a full set of example outputs. In order of top row images from left to right, then bottom row images from left to right, we have:
 
