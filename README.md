@@ -1,5 +1,5 @@
-[![spaCy](https://img.shields.io/badge/v3.1.2-spaCy-09a3d5.svg)](https://spacy.io)
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/Reikyo/spaCyfaCey/master?urlpath=%2Fapps%2Findex.ipynb)
+[![spaCy](https://img.shields.io/badge/v3.1.2-spaCy-09a3d5.svg)](https://spacy.io)
 
 # spaCyfaCey
 
