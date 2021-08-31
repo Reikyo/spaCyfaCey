@@ -16,23 +16,17 @@ If you dig into the files here, you will see some disabled code related to [neur
 ## Outputs
 
 <br/><br/>
-<img src="images/spaCyfaCey_Demo_1.png" alt="Level 1" width="250"/>
-<img src="images/spaCyfaCey_Demo_2.png" alt="Level 2" width="250"/>
-<img src="images/spaCyfaCey_Demo_3.png" alt="Level 3" width="250"/><br/>
-<img src="images/spaCyfaCey_Demo_4.png" alt="Level 4" width="250"/>
-<img src="images/spaCyfaCey_Demo_5.png" alt="Level 5" width="250"/>
-<img src="images/spaCyfaCey_Demo_6.png" alt="Level 6" width="250"/>
+<img src="images/spaCyfaCey_Demo_1.png" alt="Level 1" width="700"/>
+<img src="images/spaCyfaCey_Demo_7.png" alt="Level 2" width="700"/><br/>
 
-The above images show the running application, including a full set of example outputs. In order of top row images from left to right, then bottom row images from left to right, we have:
+The above images show the running application. The first image shows the empty GUI as it appears on launch, and the second image shows the outputs for a processed request. There are four output sections:
 
-- Empty GUI as it appears on launch
-- Some inserted text pre-running
-- Named Entity Recognition (NER) output
-- Dependency tree output
-- Dependency graph output
-- Tokens table output
+- Named Entity Recognition (NER)
+- Dependency tree
+- Dependency graph
+- Tokens table
 
-Both the dependency tree and the dependency graph show essentially the same information, but the graph has the added extra of highlighting the named entities with the same colours as used in the dedicated NER output, and also includes an edge between the end of each sentence and the beginning of the next. Seeing as these sentence edges are not standard and are not part of the dependency tree, they can be toggled from the dependency graph output via the first dropdown menu in the controls section just beneath the text input section. The input will need to be re-processed each time this selection is changed. The second dropdown menu allows the user to select either all outputs to be shown (default), or a specific single output.
+Both the dependency tree and the dependency graph show essentially the same information, but the graph has the added extra of highlighting the named entities with the same colours as used in the dedicated NER output, and also includes an edge between the end of each sentence and the beginning of the next. Seeing as these sentence edges are not standard and are not part of the dependency tree, they can be toggled from the dependency graph output via the first dropdown menu in the controls section just beneath the text input section. The input will need to be re-processed each time this option is changed. The second dropdown menu allows the user to select either all outputs to be shown (default), or a specific single output.
 
 A "token" is something that spaCy regards as a single linguistic unit, typically a single word or punctuation symbol. The output tokens table shows a selection of information that spaCy applies to each token:
 
