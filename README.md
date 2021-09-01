@@ -16,7 +16,7 @@ If you dig into the files here, you will see some disabled code related to [neur
 ## Outputs
 
 <br/><br/>
-<img src="images/spaCyfaCey_Demo_1.png" alt="Empty GUI" width="700"/><br/>
+<img src="images/spaCyfaCey_Demo_1.png" alt="Empty GUI" width="700"/><br/><br/>
 <img src="images/spaCyfaCey_Demo_7.png" alt="Outputs for a processed request" width="700"/>
 
 The above images show the running application. The first image shows the empty GUI as it appears on launch, and the second image shows the outputs for a processed request. There are four output sections:
